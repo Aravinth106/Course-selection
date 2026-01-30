@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+/* Custom rounded corners for cards */
+.custom-card {
+    border-radius: 30px !important;
+    border: none !important;
+    color: white;
+    min-height: 350px;
+    transition: transform 0.2s;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Specific Background Colors from your image */
+.bg-yellow { background-color: #FFD54F; color: #5D4037 !important; }
+.bg-pink { background-color: #F06292; }
+.bg-purple { background-color: #9575CD; }
+.bg-blue { background-color: #64B5F6; }
+
+/* Category label styling */
+.category-label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}

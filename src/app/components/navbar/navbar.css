@@ -1,0 +1,37 @@
+/* The purple button from the screenshot */
+.btn-purple {
+    background-color: #7B61FF;
+    border: none;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.btn-purple:hover {
+    background-color: #6249e0;
+}
+
+/* The light purple background for the "Solutions" link */
+.bg-light-purple {
+    background-color: #f5f3ff;
+}
+
+/* Navbar link adjustments */
+.nav-link {
+    font-size: 0.95rem;
+    color: #333 !important;
+}
+
+.navbar {
+    border-bottom: 1px solid #eee;
+}
+
+/* Logo styling */
+.navbar-brand {
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+    color: #0c1e29 !important;
+}
+
+.nav-link.active {
+    color: #7B61FF !important;
+}

@@ -1,0 +1,29 @@
+.auth-wrapper {
+    min-height: 80vh; /* Centers the card vertically in the viewport */
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    background: #ffffff;
+}
+
+/* Match the input style from your previous screenshots */
+.form-control:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 0.25rem rgba(123, 97, 255, 0.15);
+    border: 1px solid #7B61FF !important;
+}
+
+.logo-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.bg-light-purple {
+    background-color: #f5f3ff;
+}

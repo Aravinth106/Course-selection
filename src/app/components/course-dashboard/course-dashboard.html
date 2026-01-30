@@ -1,0 +1,86 @@
+<div class="dashboard-container mt-4">
+  <div class="row mb-5">
+    <div class="col-12">
+      <h1 class="fw-bold">Welcome back, {{ userName }}! 👋</h1>
+      <p class="text-muted">You have 2 courses to finish this week.</p>
+    </div>
+  </div>
+
+  <div class="row g-4 mb-5">
+    <div class="col-md-4">
+      <div class="stats-card p-4 bg-white shadow-sm rounded-4 border-0">
+        <span class="text-muted small fw-bold">ENROLLED</span>
+        <h2 class="fw-bold mt-2">12</h2>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stats-card p-4 bg-white shadow-sm rounded-4 border-0">
+        <span class="text-muted small fw-bold">COMPLETED</span>
+        <h2 class="fw-bold mt-2">04</h2>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stats-card p-4 bg-purple-tint shadow-sm rounded-4 border-0">
+        <span class="text-white small fw-bold">CERTIFICATES</span>
+        <h2 class="fw-bold mt-2 text-white">02</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 mb-3 d-flex justify-content-between align-items-center">
+      <h3 class="fw-bold">My Enrollments</h3>
+      <a href="#" class="text-decoration-none text-purple fw-bold">View all</a>
+    </div>
+
+    <!-- <div class="col-md-6 mb-4" *ngFor="let course of enrolledCourses" >
+      <div class="card enrollment-card p-3 shadow-sm border-0 rounded-4">
+        <div class="d-flex align-items-center gap-3">
+          <div class="icon-box p-3 rounded-4" [ngClass]="course.colorClass">
+            <i class="bi bi-play-fill fs-3 text-white"></i>
+          </div>
+          <div class="flex-grow-1">
+            <h5 class="mb-1 fw-bold">{{ course.title }}</h5>
+            <div class="progress mt-2" style="height: 6px;">
+              <div class="progress-bar bg-purple" role="progressbar" [style.width]="'45%'"></div>
+            </div>
+            <div class="d-flex justify-content-between mt-1">
+               <span class="small text-muted">45% Completed</span>
+            </div>
+          </div>
+          <button class="btn btn-light rounded-circle shadow-sm">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div> -->
+    <div class="col-md-6 mb-4" *ngFor="let course of enrolledCourses">
+  <div class="card enrollment-card p-3 shadow-sm border-0 rounded-4 h-100">
+    <div class="d-flex align-items-center gap-3">
+      <div class="icon-box p-3 rounded-4" [ngClass]="course.colorClass">
+        <i class="bi bi-play-fill fs-3 text-white"></i>
+      </div>
+      
+      <div class="flex-grow-1">
+        <h5 class="mb-1 fw-bold text-dark">{{ course.title }}</h5>
+        <div class="progress mt-2" style="height: 6px; background-color: #eee;">
+          <div class="progress-bar bg-purple" role="progressbar" [style.width]="'45%'"></div>
+        </div>
+        <div class="d-flex justify-content-between mt-1">
+           <span class="small text-muted">45% Completed</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4 d-flex justify-content-between align-items-center">
+        <span class="small text-muted"><i class="bi bi-clock me-1"></i> 2h 30m left</span>
+        <button 
+          class="btn btn-purple-outline rounded-pill px-4 fw-bold btn-sm"
+          [routerLink]="['/course-detail', course.id]">
+          Continue Learning <i class="bi bi-arrow-right ms-1"></i>
+        </button>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
