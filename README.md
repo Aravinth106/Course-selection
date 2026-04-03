@@ -1,59 +1,108 @@
-# CourseSelection
+# EduSelect - Course Selection Platform
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+An Angular 21 single-page application for browsing, enrolling in, and managing online courses. Built with Bootstrap 5 for responsive UI and Bootstrap Icons for iconography.
 
-## Development server
+## Overview
 
-To start a local development server, run:
+EduSelect is a front-end course selection platform that lets users:
+
+- **Browse courses** across categories like Design, Skills, Technology, and Business
+- **View course details** including lessons count, workshops, and enrollment options
+- **Track progress** via a personal dashboard showing enrolled courses, completion stats, and certificates
+- **Sign in** through a reactive login form with email/password validation
+
+The app currently uses mock data served through an in-memory `CourseService`. There is no backend integration yet (comments in the codebase reference a future ASP.NET Core API).
+
+## Tech Stack
+
+| Layer       | Technology                          |
+|-------------|-------------------------------------|
+| Framework   | Angular 21 (standalone components)  |
+| Language    | TypeScript 5.9                      |
+| Styling     | Bootstrap 5.3, Bootstrap Icons      |
+| Forms       | Angular Reactive Forms              |
+| Routing     | Angular Router                      |
+| Testing     | Vitest 4 with jsdom                 |
+| Package Mgr | npm 10                              |
+
+## Project Structure
+
+```
+src/app/
+  app.ts                    # Root component (renders Navbar + RouterOutlet)
+  app.routes.ts             # Route definitions
+  app.config.ts             # App-level providers
+  components/
+    navbar/                 # Top navigation bar with route links and sign-in button
+    course-dashboard/       # User dashboard with enrollment stats and progress cards
+    course-list/            # Grid view of all available courses
+    course-detail/          # Single course page with description, pricing, and enroll CTA
+    login/                  # Sign-in form with reactive validation
+    about/                  # Mission statement and platform highlights
+    contact/                # Contact form and support info
+  services/
+    course.ts               # CourseService - provides mock course data and Courses interface
+```
+
+## Routes
+
+| Path                | Component          | Description                    |
+|---------------------|--------------------|--------------------------------|
+| `/`                 | redirect           | Redirects to `/dashboard`      |
+| `/dashboard`        | CourseDashboard    | User's enrolled courses & stats|
+| `/courses`          | CourseList          | Browse all available courses   |
+| `/course-detail/:id`| CourseDetail       | Single course details page     |
+| `/login`            | Login               | Authentication form            |
+| `/navbar`           | Navbar              | Navbar component (standalone)  |
+| `/about`            | About               | About the platform             |
+| `/contact`          | Contact             | Contact form and info          |
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v20+ recommended)
+- npm 10+
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Development server
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Then open [http://localhost:4200](http://localhost:4200). The app redirects to the dashboard by default.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+### Build
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Production artifacts are output to `dist/`.
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Run tests
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+Uses Vitest with jsdom for unit testing.
 
-For end-to-end (e2e) testing, run:
+## Current Limitations
 
-```bash
-ng e2e
-```
+- All course data is hardcoded in `CourseService` (no backend API)
+- Login form logs credentials to console but does not authenticate
+- Dashboard stats (enrolled: 12, completed: 04, certificates: 02) are static
+- Progress percentages on enrollment cards are hardcoded at 45%
+- No route guards or authentication state management
+- Search input on the courses page is not functional
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## License
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project does not currently specify a license.
