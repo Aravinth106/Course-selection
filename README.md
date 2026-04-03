@@ -53,6 +53,7 @@ src/app/
 | `/courses`          | CourseList          | Browse all available courses   |
 | `/course-detail/:id`| CourseDetail       | Single course details page     |
 | `/login`            | Login               | Authentication form            |
+| `/navbar`           | Navbar              | Navbar component (standalone)  |
 | `/about`            | About               | About the platform             |
 | `/contact`          | Contact             | Contact form and info          |
 
